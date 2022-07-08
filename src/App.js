@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import getShipData from "./components/getShipData";
+import Ships from "./components/Ships";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [shipsData, setShipsData] = useState([]); // an empty [] equals true
+
+  useEffect(() => {
+    const URL = "https://swapi.dev/api/starships/";
+    getShipData(URL, setShipsData);
+  }, []); // [] so that it only makes the request once (at the start of the app)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"></header>
+      <Ships ships={shipsData.results} />
     </div>
   );
-}
+};
 
 export default App;
