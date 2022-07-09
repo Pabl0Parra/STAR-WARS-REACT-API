@@ -1,10 +1,11 @@
 import Ships from "./components/Ships";
+import Header from "./components/Header";
 import "./App.css";
 
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Header />
       <Ships />
     </div>
   );

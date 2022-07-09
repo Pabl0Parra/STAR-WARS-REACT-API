@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import getShipData from "./getShipData";
+import getShipData from "./GetShipData";
 import ShipsList from "./ShipsList";
 
 const Ships = () => {
-  const [shipsData, setShipsData] = useState([]); // an empty [] equals true
-  const [ship, setShip] = useState("");
+  const [shipsData, setShipsData] = useState([]);
 
   useEffect(() => {
     const URL = "https://swapi.dev/api/starships/";
