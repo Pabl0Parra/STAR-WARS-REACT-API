@@ -6,7 +6,7 @@ const ShipsList = ({ ships }) => {
       ) : (
         ships.map((ship, index) => {
           return (
-            <li key={index} className="list__item">
+            <li key={index} className="list_item">
               <h3>{ship.name}</h3>
               <p>{ship.model}</p>
             </li>
