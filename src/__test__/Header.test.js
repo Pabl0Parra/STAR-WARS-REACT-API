@@ -13,8 +13,8 @@ describe("login & sign up buttons", () => {
   it("must display both buttons in header", async () => {
     render(<Header />);
 
-    expect(screen.getAllByRole("button", { name: /log in/i })).toBeVisible();
+    expect(screen.getByText(/log in/i)).toBeInTheDocument();
 
-    expect(screen.getAllByRole("button", { name: /sign up/i })).toBeVisible();
+    expect(screen.getByText(/sign up/i)).toBeInTheDocument();
   });
 });

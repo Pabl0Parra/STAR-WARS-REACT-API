@@ -6,8 +6,12 @@ const Header = () => {
     <div className="header">
       <img src={logo} alt="StarWars" className="header_logo"></img>
       <div>
-        <button aria-label="log in">LOG IN</button>
-        <button aria-label="sign up">SIGN UP</button>
+        <button id="logIn" name="logIn" aria-label="log in">
+          LOG IN
+        </button>
+        <button id="signUp" name="signUp" aria-label="sign up">
+          SIGN UP
+        </button>
       </div>
     </div>
   );
