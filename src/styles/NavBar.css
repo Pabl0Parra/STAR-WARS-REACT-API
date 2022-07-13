@@ -1,0 +1,18 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border: 1px solid gray;
+    border-left: 1px solid gray;
+    height: 40px;
+    width: 100%;
+    background-color: black;
+    color: snow;
+}
+
+.nav_item {
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+}
