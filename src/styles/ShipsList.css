@@ -1,0 +1,9 @@
+.list_item {
+  background-color: #151515;
+  color: #fff;
+  cursor: pointer;
+}
+
+Link * {
+  pointer-events: none;
+}
