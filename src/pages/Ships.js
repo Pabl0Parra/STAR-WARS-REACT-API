@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import getShipData from "./GetShipData";
-import ShipsList from "./ShipsList";
+import getShipData from "../components/GetShipData";
+import ShipsList from "../components/ShipsList";
 
 const Ships = () => {
   const [shipsData, setShipsData] = useState([]);
