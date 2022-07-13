@@ -1,3 +1,5 @@
+import "../styles/ShipDetails.css";
+
 export default function ShipDetails({ info, id }) {
   const {
     name,
@@ -13,6 +15,7 @@ export default function ShipDetails({ info, id }) {
       <img
         src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
         alt=""
+        className="ship_img"
       />
       <h3>{name}</h3>
       <p>Model: {model}</p>
