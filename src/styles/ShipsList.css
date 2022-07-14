@@ -13,3 +13,13 @@
 Link * {
   pointer-events: none;
 }
+
+.nav_item {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 1rem;
+}
+
+.nav_item:hover {
+  font-weight: 800;
+}
