@@ -1,7 +1,13 @@
 .list_item {
   background-color: #151515;
-  color: #fff;
+  color: #727272;
   cursor: pointer;
+  text-transform: uppercase;
+  
+}
+
+.list_item a {
+  text-decoration: none;
 }
 
 Link * {
