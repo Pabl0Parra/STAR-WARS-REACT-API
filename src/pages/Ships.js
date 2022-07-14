@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
-import getShipData from "../components/GetShipData";
+import axios from "axios";
 import ShipsList from "../components/ShipsList";
+import FetchShips from "../functions/FetchShips";
 
 const Ships = ({ changeShip, changeId }) => {
   const [shipsData, setShipsData] = useState([]);
 
   useEffect(() => {
-    const URL = "https://swapi.dev/api/starships/";
-    getShipData(URL, setShipsData);
+    const source = axios.CancelToken.source();
+    const getShipsData = async () => setShipsData(await FetchShips());
+    getShipsData();
+
+    return () => {
+      source.cancel();
+    };
   }, []); // [] so that it only makes the request once (at the start of the app)
 
   return (

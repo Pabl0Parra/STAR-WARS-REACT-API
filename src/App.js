@@ -1,20 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Ships from "./pages/Ships";
 import Header from "./components/Header";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import ShipDetails from "./components/ShipDetails";
+import ShipDetails from "./pages/ShipDetails";
 
 const App = () => {
   const [selectedShip, setSelectedShip] = useState();
   const [idShip, setIdShip] = useState();
-
-  useEffect(() => {
-    sessionStorage.setItem("ship", JSON.stringify(selectedShip));
-    sessionStorage.setItem("id", JSON.stringify(idShip));
-  }, [selectedShip, idShip]);
 
   return (
     <div className="App">

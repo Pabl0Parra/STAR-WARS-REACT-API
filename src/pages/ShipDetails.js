@@ -1,3 +1,6 @@
+import { useState } from "react";
+import defaultImg from "../assets/default.jpg";
+
 import "../styles/ShipDetails.css";
 
 export default function ShipDetails({ info, id }) {
@@ -10,10 +13,17 @@ export default function ShipDetails({ info, id }) {
     max_atmosphering_speed,
     crew,
   } = info;
+
+  const ImgURL = `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`;
+
+  const [imgSource, setImgSource] = useState(ImgURL);
+  const onError = () => setImgSource(defaultImg);
+
   return (
     <div>
       <img
-        src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
+        src={imgSource ? imgSource : defaultImg}
+        onError={onError}
         alt=""
         className="ship_img"
       />
