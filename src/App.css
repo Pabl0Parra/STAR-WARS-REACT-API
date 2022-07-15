@@ -9,6 +9,8 @@ ul {
 }
 
 main {
-  margin-top: 220px;
+  margin: 190px auto 0;
+  padding-top: 2em;
   background-image: url("./assets/bg.jpg");
+  background-attachment: fixed;
 }

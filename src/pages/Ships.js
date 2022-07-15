@@ -5,6 +5,7 @@ import ShipsList from "../components/ShipsList";
 import fetchShips from "../functions/FetchShips";
 import Button from "../components/Button";
 import Footer from "../components/Footer";
+import "../styles/Ships.css";
 
 const Ships = ({ changeShip, changeId }) => {
   const [ships, setShips] = useState();
@@ -34,7 +35,7 @@ const Ships = ({ changeShip, changeId }) => {
   return (
     <>
       <ShipsList ships={ships} changeShip={changeShip} changeId={changeId} />
-      <Button open={handleAddShips} text={"view more"} />
+      <Button open={handleAddShips} text={"view more"} name={"view_button"} />
       <Footer />
     </>
   );

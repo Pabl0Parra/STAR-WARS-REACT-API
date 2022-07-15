@@ -1,0 +1,28 @@
+.view_button {
+  margin-bottom: 3em;
+  padding: 1em 2.2em;
+  background-color: var(--black);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--white);
+  border: none;
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  cursor: pointer;
+  animation: opacity 10s;
+}
+
+.view_button:hover {
+  background-color: transparent;
+  border-color: var(--gold-color);
+  font-weight: 800;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}

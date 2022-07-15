@@ -28,6 +28,12 @@
   justify-content: center;
 }
 
+.social-section,
+.legal {
+  position: relative;
+  z-index: 1;
+}
+
 .legal_link {
   display: inline-block;
   margin: 6px 0 0;
@@ -36,8 +42,6 @@
 }
 
 .legal_link a {
-  color: var(--grey-color);
-  text-decoration: none;
   transition: color 0.8s ease;
 }
 

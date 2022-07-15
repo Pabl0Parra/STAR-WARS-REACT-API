@@ -4,6 +4,7 @@
   --grey-dark: #242424;
   --black: #000;
   --border-color: #333;
+  --gold-color: #d7a746;
 }
 
 * {
@@ -12,7 +13,11 @@
 
 @font-face {
   font-family: "StarWars";
-  src: url("./fonts_family/font1.woff") format("woff");
+  src: url("./fonts_family/font3.woff") format("woff");
+}
+
+html {
+  overflow-y: scroll;
 }
 
 body {
@@ -22,6 +27,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--black);
   color: var(--white);
+}
+
+a {
+  color: var(--grey-color);
+  text-decoration: none;
 }
 
 code {

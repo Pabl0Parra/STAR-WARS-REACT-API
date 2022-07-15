@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/NavBar.css";
 
 const NavBar = () => {
@@ -7,7 +7,6 @@ const NavBar = () => {
     for (let link of links) {
       link.firstChild.classList.remove("active");
     }
-
     e.target.classList.add("active");
   };
 
@@ -15,16 +14,16 @@ const NavBar = () => {
     <nav className="nav">
       <ul aria-label="menu" className="nav_links" id="links">
         <li className="nav_link" onClick={(e) => handleActiveClass(e)}>
-          <Link to="/" className="active">
+          <NavLink to="/" className="active">
             HOME
-          </Link>
+          </NavLink>
           <span className="nav_link-bar nav_link-bar--green"></span>
         </li>
         <li className="nav_link">
-          <Link to="/starships" onClick={(e) => handleActiveClass(e)}>
+          <NavLink to="/starships" onClick={(e) => handleActiveClass(e)}>
             STARSHIPS
-          </Link>
-          <span className="nav_link-bar nav_link-bar--blue"></span>
+          </NavLink>
+          <span className="nav_link-bar nav_link-bar--red"></span>
         </li>
       </ul>
     </nav>
