@@ -1,6 +1,6 @@
-export default function Button({ open, text }) {
+export default function Button({ open, text, name }) {
   return (
-    <button aria-label={text} onClick={open}>
+    <button aria-label={text} onClick={open} className={name}>
       {text.toUpperCase()}
     </button>
   );

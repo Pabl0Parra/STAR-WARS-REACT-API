@@ -1,5 +1,5 @@
-import useSessionStorage from "./hooks/useSessionStorage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import useSessionStorage from "./hooks/useSessionStorage";
 import Ships from "./pages/Ships";
 import Header from "./components/Header";
 import "./App.css";
@@ -8,8 +8,8 @@ import Home from "./pages/Home";
 import ShipDetails from "./pages/ShipDetails";
 
 const App = () => {
-  const [selectedShip, setSelectedShip] = useSessionStorage("ship", "");
-  const [idShip, setIdShip] = useSessionStorage("id", "");
+  const [selectedShip, setSelectedShip] = useSessionStorage("ship");
+  const [idShip, setIdShip] = useSessionStorage("id");
 
   return (
     <div className="App">

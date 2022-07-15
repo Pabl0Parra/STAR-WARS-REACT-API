@@ -1,7 +1,5 @@
 import GetShipData from "./GetShipData";
 
-const URL = "https://swapi.dev/api/starships/";
+const fetchShips = async (url) => await GetShipData(url);
 
-const FetchShips = async () => await GetShipData(URL);
-
-export default FetchShips;
+export default fetchShips;

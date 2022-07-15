@@ -1,18 +1,26 @@
 import { Link } from "react-router-dom";
-import handleSelectedShip from "./HandleSelectedShip";
+import filteredShips from "./filteredShips";
 import "../styles/ShipsList.css";
 
 const ShipsList = ({ ships, changeShip, changeId }) => {
+  const handleSelectShip = (e) => {
+    const filteredItem = filteredShips(e, ships);
+    changeShip(filteredItem[0]);
+    changeId(filteredItem[0].url.match(/[0-9]+/));
+  };
+
   return (
     <ul className="list" aria-label="ships list">
       {ships &&
         ships.map((ship, index) => {
           return (
-            <li key={index} className="list_item" data-testid={`item-${index}`}>
+            <li
+              key={index}
+              className="list_item"
+              data-testid={`element-${index}`}
+            >
               <Link
-                onClick={(e) =>
-                  handleSelectedShip(e, ships, changeShip, changeId)
-                }
+                onClick={(e) => handleSelectShip(e)}
                 to={`/starships/${ship.name}`}
               >
                 <h3>{ship.name}</h3>
