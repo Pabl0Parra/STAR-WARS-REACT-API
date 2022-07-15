@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import filteredShips from "./filteredShips";
+import filteredShips from "./FilteredShips";
 import "../styles/ShipsList.css";
 
 const ShipsList = ({ ships, changeShip, changeId }) => {
-  const handleSelectShip = (e) => {
-    const filteredItem = filteredShips(e, ships);
+  const handleSelectShip = (name) => {
+    const filteredItem = filteredShips(name, ships);
     changeShip(filteredItem[0]);
     changeId(filteredItem[0].url.match(/[0-9]+/));
   };
@@ -20,7 +20,9 @@ const ShipsList = ({ ships, changeShip, changeId }) => {
               data-testid={`element-${index}`}
             >
               <Link
-                onClick={(e) => handleSelectShip(e)}
+                onClick={(e) =>
+                  handleSelectShip(e.target.firstChild.textContent)
+                }
                 to={`/starships/${ship.name}`}
               >
                 <h3>{ship.name}</h3>

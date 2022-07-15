@@ -1,4 +1,3 @@
-const filteredShips = (e, arr) =>
-  arr.filter((item) => item.name === e.target.firstChild.textContent);
+const filteredShips = (name, arr) => arr.filter((item) => item.name === name);
 
 export default filteredShips;

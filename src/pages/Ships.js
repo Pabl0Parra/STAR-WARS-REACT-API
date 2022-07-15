@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
+import { URL } from "../variables/URL";
 import axios from "axios";
 import ShipsList from "../components/ShipsList";
 import fetchShips from "../functions/FetchShips";
 import Button from "../components/Button";
-import { URL } from "../variables/URL";
+import Footer from "../components/Footer";
 
 const Ships = ({ changeShip, changeId }) => {
   const [ships, setShips] = useState();
@@ -34,6 +35,7 @@ const Ships = ({ changeShip, changeId }) => {
     <>
       <ShipsList ships={ships} changeShip={changeShip} changeId={changeId} />
       <Button open={handleAddShips} text={"view more"} />
+      <Footer />
     </>
   );
 };

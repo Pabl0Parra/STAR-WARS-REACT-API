@@ -1,5 +1,6 @@
 .social {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -27,7 +28,7 @@
 }
 
 .social_kids {
-  width: 33px;
+  width: 50px;
   height: 17px;
   background-color: var(--grey-color);
   margin-left: 1.2em;
