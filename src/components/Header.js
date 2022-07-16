@@ -8,7 +8,9 @@ const Header = () => {
     <div className="container">
       <header className="header">
         <SocialNetworks />
-        <img src={logo} alt="StarWars" className="header_logo" />
+        <a href="/">
+          <img src={logo} alt="StarWars" className="header_logo" />
+        </a>
         <SearchForm />
       </header>
     </div>

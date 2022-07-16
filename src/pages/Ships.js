@@ -12,6 +12,10 @@ const Ships = ({ changeShip, changeId }) => {
   const [page, setPage] = useState();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const source = axios.CancelToken.source();
     const getShipsData = async () => {
       const res = await fetchShips(URL);

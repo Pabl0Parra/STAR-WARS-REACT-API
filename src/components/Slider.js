@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-
 import { SliderData } from "../variables/SliderData";
-
+import { Link } from "react-router-dom";
+import CardSummary from "./CardSummary";
 import "../styles/Slider.css";
 
 export default function Slider() {
@@ -36,26 +36,29 @@ export default function Slider() {
       <ul className="slider_container">
         {SliderData.map((slide, index) => {
           return (
-            <li key={index} className="slider_item">
+            <li
+              key={index}
+              className={`slider_item slider_item--${slide.theme}`}
+            >
               <img
                 src={slide.image}
                 alt="StarWars content"
                 className={"slider_img"}
               />
-              <div className="slider_info">
-                <h2>Visit the starships</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Magnam sunt sed velit nobis! Magni quaerat, quo culpa
-                  repellendus nemo optio voluptate est incidunt provident.
-                  Magnam neque.
-                </p>
-                <button>More Details</button>
+              <div className={`slider_info slider_info--${slide.color}`}>
+                <h2>{slide.title}</h2>
+                <p>{slide.text}</p>
+                <Link to={slide.link}>{slide.button}</Link>
               </div>
             </li>
           );
         })}
       </ul>
+      <CardSummary
+        data={SliderData}
+        changeSlide={setCurrent}
+        current={current}
+      />
     </section>
   );
 }
