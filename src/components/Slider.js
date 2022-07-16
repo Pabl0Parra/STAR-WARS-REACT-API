@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SliderData } from "../variables/SliderData";
 import { Link } from "react-router-dom";
 import CardSummary from "./CardSummary";
@@ -6,14 +6,38 @@ import "../styles/Slider.css";
 
 export default function Slider() {
   const [current, setCurrent] = useState(0);
+  const transitionSlide = useRef(0);
+
+  const cardSlide = (slide) => {
+    setCurrent(slide);
+    clearInterval(transitionSlide.current);
+    transitionSlide.current = null;
+  };
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? SliderData.length - 1 : current - 1);
+    setCurrent((current) =>
+      current === 0 ? SliderData.length - 1 : current - 1
+    );
+    clearInterval(transitionSlide.current);
+    transitionSlide.current = null;
   };
 
   const nextSlide = () => {
-    setCurrent(current === SliderData.length - 1 ? 0 : current + 1);
+    setCurrent((current) =>
+      current === SliderData.length - 1 ? 0 : current + 1
+    );
+    clearInterval(transitionSlide.current);
+    transitionSlide.current = null;
   };
+
+  useEffect(() => {
+    transitionSlide.current = setInterval(() => {
+      setCurrent((current) =>
+        current === SliderData.length - 1 ? 0 : current + 1
+      );
+    }, 6000);
+    return () => clearInterval(transitionSlide.current);
+  }, []);
 
   useEffect(() => {
     const Slides = document.querySelectorAll(".slider_item");
@@ -23,7 +47,7 @@ export default function Slider() {
   }, [current]);
 
   return (
-    <section className="slider">
+    <section className="slider" id="slider">
       <button className="slider_button slider_button--left" onClick={prevSlide}>
         <ion-icon name="chevron-back-outline"></ion-icon>
       </button>
@@ -56,8 +80,9 @@ export default function Slider() {
       </ul>
       <CardSummary
         data={SliderData}
-        changeSlide={setCurrent}
+        changeSlide={cardSlide}
         current={current}
+        interval={transitionSlide.current}
       />
     </section>
   );

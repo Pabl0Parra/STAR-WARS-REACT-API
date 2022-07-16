@@ -1,62 +1,84 @@
 .summary {
-    position: absolute;
-    bottom: 15px;
-    left: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.summary_card {
+  position: relative;
+  height: 90px;
+  width: 200px;
+  margin-right: 1.5em;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.summary_card * {
+  pointer-events: none;
+}
+
+.summary_progress,
+.summary_title {
+  position: relative;
+  z-index: 10;
+}
+
+.summary_progress {
+  opacity: 0;
+  height: 2px;
+}
+
+.summary_progress--animated {
+  animation: progress-animation 1s linear;
+}
+
+.summary_progress--selected {
+  opacity: 1;
+}
+
+.summary_progress--blue {
+  background-color: var(--blue-color);
+}
+
+.summary_progress--orange {
+  background-color: var(--orange-color);
+}
+
+.summary_progress--gold {
+  background-color: var(--gold-color);
+}
+
+.summary_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  filter: brightness(50%);
+}
+
+.summary_bg--blur {
+  filter: brightness(25%) blur(2px);
+}
+
+.summary_title {
+  display: inline-block;
+  padding: 1em 1em 0;
+  font-size: 0.9rem;
+}
+
+@keyframes progress-animation {
+  0% {
+    opacity: 1;
+    width: 0%;
+  }
+  100% {
     width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    z-index: 10;
-  }
-  
-  .summary_card {
-    position: relative;
-    width: 200px;
-    margin-right: 1.5em;
-    text-align: left;
-    cursor: pointer;
-  }
-  
-  .summary_card * {
-    pointer-events: none;
-  }
-  
-  .summary_progress,
-  .summary_title {
-    position: relative;
-    z-index: 10;
-  }
-  
-  .summary_progress {
-    opacity: 0;
-    height: 2px;
-  }
-  
-  .summary_progress--active {
     opacity: 1;
   }
-  
-  .summary_progress--blue {
-    background-color: var(--blue-color);
-  }
-  
-  .summary_progress--orange {
-    background-color: var(--orange-color);
-  }
-  
-  .summary_progress--gold {
-    background-color: var(--gold-color);
-  }
-  
-  .summary_bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    filter: brightness(50%);
-  }
-  
-  .summary_title {
-    display: inline-block;
-    padding: 0.5em 1em;
-  }
+}
