@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Footer from "../components/Footer";
+
 import defaultImg from "../assets/default.jpg";
 import "../styles/ShipDetails.css";
 
@@ -55,7 +55,6 @@ export default function ShipDetails({ info, id }) {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

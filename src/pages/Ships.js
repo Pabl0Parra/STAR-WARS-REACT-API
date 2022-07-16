@@ -4,7 +4,7 @@ import axios from "axios";
 import ShipsList from "../components/ShipsList";
 import fetchShips from "../functions/FetchShips";
 import Button from "../components/Button";
-import Footer from "../components/Footer";
+
 import "../styles/Ships.css";
 
 const Ships = ({ changeShip, changeId }) => {
@@ -36,7 +36,6 @@ const Ships = ({ changeShip, changeId }) => {
     <>
       <ShipsList ships={ships} changeShip={changeShip} changeId={changeId} />
       <Button open={handleAddShips} text={"view more"} name={"view_button"} />
-      <Footer />
     </>
   );
 };

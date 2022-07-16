@@ -16,7 +16,7 @@ export default function Slider() {
   };
 
   useEffect(() => {
-    const Slides = document.querySelectorAll(".slider_img");
+    const Slides = document.querySelectorAll(".slider_item");
     for (let img of Slides) {
       img.style.transform = `translateX(-${current}00%)`;
     }
@@ -36,8 +36,22 @@ export default function Slider() {
       <ul className="slider_container">
         {SliderData.map((slide, index) => {
           return (
-            <li key={index} className={`slider_img slider_img--${index}`}>
-              <img src={slide.image} alt="StarWars content" />
+            <li key={index} className="slider_item">
+              <img
+                src={slide.image}
+                alt="StarWars content"
+                className={"slider_img"}
+              />
+              <div className="slider_info">
+                <h2>Visit the starships</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Magnam sunt sed velit nobis! Magni quaerat, quo culpa
+                  repellendus nemo optio voluptate est incidunt provident.
+                  Magnam neque.
+                </p>
+                <button>More Details</button>
+              </div>
             </li>
           );
         })}

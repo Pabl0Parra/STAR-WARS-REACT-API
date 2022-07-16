@@ -1,7 +1,6 @@
 .slider {
   position: relative;
-  display: flex;
-  align-items: center;
+  margin-bottom: 3rem;
   max-height: 800px;
   overflow: hidden;
 }
@@ -11,9 +10,11 @@
   width: 40px;
   height: 40px;
   padding: 4px;
+  top: 50%;
   font-size: 2rem;
   color: var(--white);
   background-color: rgba(32, 32, 32, 0.5);
+  outline: none;
   border: none;
   border-radius: 2px;
   cursor: pointer;
@@ -38,6 +39,19 @@
   display: flex;
 }
 
-.slider_img {
+.slider_item {
+  position: relative;
   transition: transform 1s ease;
+}
+
+.slider_img {
+  width: 100vw;
+}
+
+.slider_info {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 30%;
+  text-align: left;
 }
