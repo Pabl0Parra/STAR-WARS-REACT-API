@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import defaultImg from "../assets/default.jpg";
 import "../styles/ShipDetails.css";
@@ -18,10 +18,6 @@ export default function ShipDetails({ info, id }) {
 
   const [imgSource, setImgSource] = useState(ImgURL);
   const onError = () => setImgSource(defaultImg);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div>

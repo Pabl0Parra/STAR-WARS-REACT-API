@@ -12,10 +12,6 @@ const Ships = ({ changeShip, changeId }) => {
   const [page, setPage] = useState();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
     const source = axios.CancelToken.source();
     const getShipsData = async () => {
       const res = await fetchShips(URL);
@@ -39,7 +35,7 @@ const Ships = ({ changeShip, changeId }) => {
   return (
     <>
       <ShipsList ships={ships} changeShip={changeShip} changeId={changeId} />
-      <Button open={handleAddShips} text={"view more"} name={"view_button"} />
+      <Button open={handleAddShips} text={"VIEW MORE"} name={"view_button"} />
     </>
   );
 };

@@ -8,6 +8,10 @@
   --brown-color: #403321;
   --orange-color: #d57026;
   --white: #fff;
+  --background-popup: #181818;
+  --yellow-popup: #edd700;
+  --grey-popup: #484848;
+  --blue-popup: #3f6dac;
 }
 
 * {

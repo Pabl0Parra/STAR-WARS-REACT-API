@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { SliderData } from "../variables/SliderData";
 import { Link } from "react-router-dom";
 import CardSummary from "./CardSummary";
+import Button from "./Button";
 import "../styles/Slider.css";
 
 export default function Slider() {
@@ -48,15 +49,16 @@ export default function Slider() {
 
   return (
     <section className="slider" id="slider">
-      <button className="slider_button slider_button--left" onClick={prevSlide}>
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </button>
-      <button
-        className="slider_button slider_button--right"
-        onClick={nextSlide}
-      >
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </button>
+      <Button
+        name={"slider_button slider_button--left"}
+        open={prevSlide}
+        text={<ion-icon name="chevron-back-outline"></ion-icon>}
+      />
+      <Button
+        name={"slider_button slider_button--right"}
+        open={nextSlide}
+        text={<ion-icon name="chevron-forward-outline"></ion-icon>}
+      />
       <ul className="slider_container">
         {SliderData.map((slide, index) => {
           return (

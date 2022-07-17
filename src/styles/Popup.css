@@ -1,0 +1,134 @@
+.popup {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+}
+
+.popup_container {
+  position: relative;
+  max-width: 540px;
+  width: 100%;
+  padding-bottom: 40px;
+  background-color: var(--background-popup);
+}
+
+.popup_logo {
+  margin: 30px 0 10px;
+}
+
+.popup_title {
+  margin: 0 0 11px;
+  color: var(--yellow-popup);
+  font-size: 1.656rem;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.popup_form {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 0 auto;
+  color: var(--grey-color);
+}
+
+.popup_list {
+  height: 60px;
+  text-align: left;
+  color: var(--yellow-popup);
+  list-style: initial;
+  padding-left: 1em;
+  font-size: 0.8rem;
+}
+
+.popup_show {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.popup_checkbox {
+  margin: 0 0.5em 0 0;
+  position: relative;
+  width: 1.4rem;
+  height: 1.4rem;
+  z-index: 10;
+}
+
+.popup_checkbox + label {
+  padding-top: 5px;
+}
+
+.popup_submit,
+.popup_account {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.popup_submit {
+  background-color: var(--grey-popup);
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.popup_submit:hover {
+  background-color: var(--blue-popup);
+}
+
+.popup_help {
+  margin: 5px 0 30px;
+  text-align: right;
+}
+
+.popup_help a {
+  color: var(--yellow-popup);
+}
+
+.popup_help a:hover {
+  text-decoration: underline;
+}
+
+.popup_account {
+  background-color: transparent;
+  color: var(--yellow-popup);
+}
+
+.popup_account:hover {
+  border: 1px solid var(--yellow-popup);
+}
+
+.popup_footer a {
+  color: var(--yellow-popup);
+}
+
+.popup_footer a:hover {
+  text-decoration: underline;
+}
+
+.popup_close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 38px;
+  width: 38px;
+  background-color: transparent;
+  color: var(--white);
+  opacity: 0.2;
+  z-index: 1;
+}
+.popup_close ion-icon {
+  font-size: 2.5rem;
+}
+
+.popup_close:hover {
+  opacity: 1;
+}

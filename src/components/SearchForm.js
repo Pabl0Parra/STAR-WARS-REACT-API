@@ -1,14 +1,7 @@
 import "../styles/SearchForm.css";
-import Button from "../components/Button";
+import Button from "./Button";
 
-export default function SearchForm() {
-  const handleOpenLogin = () => {
-    console.log("openLogin");
-  };
-
-  const handleOpenSignup = () => {
-    console.log("openSignup");
-  };
+export default function SearchForm({ openLoginPopup, openRegisterPopup }) {
   return (
     <div>
       <form className="form">
@@ -26,11 +19,15 @@ export default function SearchForm() {
         </button>
       </form>
       <div className="button-group">
-        <Button open={handleOpenLogin} text={"log in"} name={"login_button"} />
+        <Button
+          open={() => openLoginPopup(true)}
+          text={"LOG IN"}
+          name={"login_button"}
+        />
         <span></span>
         <Button
-          open={handleOpenSignup}
-          text={"sign up"}
+          open={() => openRegisterPopup(true)}
+          text={"SIGN UP"}
           name={"signup_button"}
         />
       </div>

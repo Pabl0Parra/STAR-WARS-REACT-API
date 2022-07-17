@@ -3,7 +3,7 @@ import SocialNetworks from "../components/SocialNetworks";
 import SearchForm from "../components/SearchForm";
 import "../styles/Header.css";
 
-const Header = () => {
+const Header = ({ openLoginPopup, openRegisterPopup }) => {
   return (
     <div className="container">
       <header className="header">
@@ -11,7 +11,10 @@ const Header = () => {
         <a href="/">
           <img src={logo} alt="StarWars" className="header_logo" />
         </a>
-        <SearchForm />
+        <SearchForm
+          openLoginPopup={openLoginPopup}
+          openRegisterPopup={openRegisterPopup}
+        />
       </header>
     </div>
   );
