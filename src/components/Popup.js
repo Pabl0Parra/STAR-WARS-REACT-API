@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button";
 import Input from "./Input";
 import useValidation from "../hooks/useValidation";
 import ValidateInputs from "../functions/ValidateInputs";
+import useLocalStorage from "../hooks/useLocalStorage";
 import "../styles/Popup.css";
 import popup_logo from "../assets/popup_logo.png";
 
 export default function Popup({ closePopup, openPopup, title }) {
   const [selectAria, setSelectAria] = useState(false);
   const [displayPassword, setDisplayPassword] = useState(false);
-  const { handleBlur, errors } = useValidation(ValidateInputs);
+  const [user, setUser] = useLocalStorage("user");
+  const [isValid, setIsValid] = useState(false);
+  const { handleBlur, errors, handleSubmit, values } = useValidation(
+    ValidateInputs,
+    setIsValid
+  );
+
+  useEffect(() => {
+    if (isValid) setUser((user) => [...user, values]);
+  }, [isValid, setUser, values]);
 
   return (
     <div className="popup">
@@ -19,14 +29,10 @@ export default function Popup({ closePopup, openPopup, title }) {
       >
         <img src={popup_logo} alt="" className="popup_logo" />
         <h2 className="popup_title">{title}</h2>
-        <form className="popup_form">
-          {title === "sign in" ? (
+        <form className="popup_form" onSubmit={handleSubmit}>
+          {(title === "sign in") & !isValid ? (
             <>
-              <Input
-                type={"text"}
-                id={"name"}
-                text={"Username or Email Address"}
-              />
+              <Input type={"text"} id={"name"} text={"User name or email"} />
               <Input type={"password"} id={"password"} text={"Password"} />
               <Button name={"popup_submit"} text={"Log in"} />
               <div className="popup_help">
@@ -42,6 +48,10 @@ export default function Popup({ closePopup, openPopup, title }) {
               />
             </>
           ) : (
+            ""
+          )}
+          {(title === "sign in") & isValid ? <div>login</div> : ""}
+          {(title === "create your account") & !isValid ? (
             <>
               <Input
                 type={"text"}
@@ -76,10 +86,17 @@ export default function Popup({ closePopup, openPopup, title }) {
                   type={displayPassword ? "text" : "password"}
                   name="password"
                   id="password"
-                  className="popup_input popup_input--expand"
+                  maxLength="60"
+                  className={
+                    !errors.password
+                      ? "popup_input popup_input--expand"
+                      : "popup_input popup_input--expand popup_input--error"
+                  }
                   placeholder="Password"
                   onSelect={() => setSelectAria(true)}
+                  onBlur={handleBlur}
                 />
+                <p className="popup_errors">{errors.password}</p>
                 <ul
                   className={
                     selectAria ? "popup_list popup_list--show" : "popup_list"
@@ -87,7 +104,7 @@ export default function Popup({ closePopup, openPopup, title }) {
                 >
                   <li
                     className={
-                      errors.password === "Can't be less than 6 characters.."
+                      errors.password === "Can't be less than 6 characters."
                         ? "popup_condition--error"
                         : ""
                     }
@@ -116,7 +133,9 @@ export default function Popup({ closePopup, openPopup, title }) {
                   <label htmlFor="show">Show password</label>
                 </div>
               </div>
-              <Button name={"popup_submit"} text={"Create Account"} />
+              <button className="popup_submit" aria-label="create account">
+                Create Account
+              </button>
               <p className="popup_footer">
                 Do you have an account with us?{" "}
                 <a
@@ -130,7 +149,10 @@ export default function Popup({ closePopup, openPopup, title }) {
                 </a>
               </p>
             </>
+          ) : (
+            ""
           )}
+          {(title === "sign in") & isValid ? <div>registered</div> : ""}
         </form>
         <Button
           name={"popup_close"}

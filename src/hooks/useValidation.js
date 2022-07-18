@@ -1,34 +1,26 @@
 import { useState } from "react";
 
-const useValidation = (validateInputs) => {
-  const [content, setContent] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    displayName: "",
-    password: "",
-  });
-  const [errors, setErrors] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    displayName: "",
-    password: "",
-  });
+const useValidation = (validateInputs, setIsValid) => {
+  const [values, setValues] = useState({});
+  const [errors, setErrors] = useState([]);
 
   const handleBlur = (e) => {
     const { name, value } = e.target;
-    setContent({
-      ...content,
+    setValues({
+      ...values,
       [name]: value,
     });
     setErrors(validateInputs(name, value, errors));
   };
 
-  return {
-    handleBlur,
-    errors,
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (Object.values(errors).every((error) => error === "")) {
+      setIsValid(true);
+    }
   };
+
+  return { handleBlur, errors, handleSubmit, values };
 };
 
 export default useValidation;
