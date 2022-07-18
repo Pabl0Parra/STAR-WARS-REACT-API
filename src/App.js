@@ -23,15 +23,15 @@ const App = () => {
       <BrowserRouter>
         {loginPopup && (
           <Popup
-            closePopup={setLoginPopup}
-            openPopup={setRegisterPopup}
+            closePopup={() => setLoginPopup(false)}
+            openPopup={() => setRegisterPopup(true)}
             title={"sign in"}
           />
         )}
         {registerPopup && (
           <Popup
-            closePopup={setRegisterPopup}
-            openPopup={setLoginPopup}
+            closePopup={() => setRegisterPopup(false)}
+            openPopup={() => setLoginPopup(true)}
             title={"create your account"}
           />
         )}
