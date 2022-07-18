@@ -1,6 +1,5 @@
 .popup_input {
   height: 40px;
-  margin-bottom: 4%;
   padding: 0 15px;
   line-height: 40px;
   border-radius: 3px;
@@ -18,4 +17,20 @@
 }
 .popup_input--expand {
   width: 100%;
+}
+
+.popup_input--error {
+  border: 1px solid var(--red-popup);
+}
+
+.popup_input--error::placeholder {
+  color: var(--red-popup);
+}
+
+.popup_errors {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.6em 0;
+  color: var(--red-popup);
+  text-align: left;
 }

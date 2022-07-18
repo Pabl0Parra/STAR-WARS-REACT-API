@@ -40,18 +40,30 @@
 }
 
 .popup_list {
-  height: 60px;
+  height: 0px;
   text-align: left;
   color: var(--yellow-popup);
   list-style: initial;
-  padding-left: 1em;
+  padding-left: 1.2em;
   font-size: 0.8rem;
+  opacity: 0;
+  transition: height 0.35s;
+}
+
+.popup_list--show {
+  height: 60px;
+  opacity: 1;
+}
+
+.popup_condition--error {
+  color: var(--red-popup);
 }
 
 .popup_show {
+  position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 1em;
+  padding-bottom: 1em;
 }
 
 .popup_checkbox {
@@ -59,7 +71,7 @@
   position: relative;
   width: 1.4rem;
   height: 1.4rem;
-  z-index: 10;
+  background-color: var(--background-popup);
 }
 
 .popup_checkbox + label {
