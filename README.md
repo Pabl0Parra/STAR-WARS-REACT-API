@@ -1,3 +1,3 @@
 # **PROJECT PREVIEW**
 
-![starwars clone](src/assets/video.webm)
+[](src/assets/video.webm)

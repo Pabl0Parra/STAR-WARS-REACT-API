@@ -21,7 +21,7 @@
 
 @font-face {
   font-family: "StarWars";
-  src: url("./fonts_family/font3.woff") format("woff");
+  src: url("./font_family/font3.woff") format("woff");
 }
 
 html {
