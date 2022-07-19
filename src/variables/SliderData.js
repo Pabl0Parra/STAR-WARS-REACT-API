@@ -7,7 +7,7 @@ const SliderData = [
   {
     image: slide1,
     title: "WOULD YOU LIKE TO DISCOVER STAR WARS SHIPS?",
-    text: "The Mandalorian & Baby Yoda are waiting for you",
+    text: "Jump in the ship to go to the museum",
     theme: "light",
     color: "blue",
     button: "learn more",
