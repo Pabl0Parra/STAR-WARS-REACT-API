@@ -16,7 +16,7 @@ const SliderData = [
   {
     image: slide2,
     title: "DISCOVER STAR WARS PILOTS",
-    text: "Here, you will be introduce to Star Wars famous pilots",
+    text: "Let us introduce you to Star Wars pilots",
     theme: "dark",
     color: "orange",
     button: "more details",
@@ -33,11 +33,11 @@ const SliderData = [
   },
   {
     image: slide4,
-    title: "WELCOME TO THE DARK SIDE",
+    title: "WELCOME TO THE DARK SIDE, DARTH VADER IS LOOKING FOR NEW RECRUITS!",
     text: "Ready to join the dark forces?",
     theme: "light",
     color: "gold",
-    button: "read now",
+    button: "join",
     link: "#!",
   },
 ];
