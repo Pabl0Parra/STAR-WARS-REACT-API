@@ -3,6 +3,7 @@ import Button from "./Button";
 import Input from "./Input";
 import useValidation from "../hooks/useValidation";
 import validateInputs from "../functions/validateInputs";
+import validateForm from "../functions/validateForm";
 import useLocalStorage from "../hooks/useLocalStorage";
 import popup_logo from "../assets/popup_logo.png";
 import "../styles/Popup.css";
@@ -14,12 +15,18 @@ export default function Popup({ closePopup, openPopup, title }) {
   const [isValid, setIsValid] = useState(false);
   const { handleBlur, errors, handleSubmit, values } = useValidation(
     validateInputs,
+    validateForm,
     setIsValid
   );
 
   useEffect(() => {
     if (isValid) setUser((user) => [...user, values]);
   }, [isValid, setUser, values]);
+
+  const handleonChangePopup = () => {
+    closePopup();
+    openPopup();
+  };
 
   return (
     <div className="popup">
@@ -138,13 +145,7 @@ export default function Popup({ closePopup, openPopup, title }) {
               </button>
               <p className="popup_footer">
                 Do you have an account with us?{" "}
-                <a
-                  href="#!"
-                  onClick={() => {
-                    closePopup(false);
-                    openPopup(true);
-                  }}
-                >
+                <a href="#!" onClick={handleonChangePopup}>
                   Sign In
                 </a>
               </p>
@@ -156,7 +157,7 @@ export default function Popup({ closePopup, openPopup, title }) {
         </form>
         <Button
           name={"popup_close"}
-          open={() => closePopup(false)}
+          open={closePopup}
           text={<ion-icon name="close-outline"></ion-icon>}
         />
       </div>
