@@ -6,7 +6,7 @@ const getStoredValue = (key) => {
   else return [];
 };
 
-export default function useLocalstorage(key) {
+export default function useLocalStorage(key) {
   const [userInfo, setUserInfo] = useState(() => {
     return getStoredValue(key);
   });

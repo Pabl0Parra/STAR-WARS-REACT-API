@@ -4,8 +4,8 @@ import Input from "./Input";
 import useValidation from "../hooks/useValidation";
 import ValidateInputs from "../functions/ValidateInputs";
 import useLocalStorage from "../hooks/useLocalStorage";
-import "../styles/Popup.css";
 import popup_logo from "../assets/popup_logo.png";
+import "../styles/Popup.css";
 
 export default function Popup({ closePopup, openPopup, title }) {
   const [selectAria, setSelectAria] = useState(false);
