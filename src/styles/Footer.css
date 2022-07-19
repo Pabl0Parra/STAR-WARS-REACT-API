@@ -8,15 +8,18 @@
   color: var(--grey-color);
   background-color: var(--black);
   overflow: hidden;
+  background-image: url(../assets/vader_2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.footer_img {
+/* .footer_img {
   position: absolute;
   top: -100px;
   left: 0;
   max-width: 100%;
   z-index: 0;
-}
+} */
 
 .social-section {
   margin-bottom: 2em;

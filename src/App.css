@@ -9,8 +9,8 @@ ul {
 }
 
 main {
-  margin: 190px auto 0;
-  min-height: 100vh;
+  margin: 180px auto 0;
+  /* min-height: 100vh; */
   padding: 2em;
   background-image: url("./assets/bg.jpg");
   background-attachment: fixed;
