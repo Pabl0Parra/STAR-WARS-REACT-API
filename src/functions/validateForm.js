@@ -1,11 +1,11 @@
 export default function validateForm(values) {
   let errors = {};
 
-  if (!values.firstname) {
+  if (!values.firstName) {
     errors.firstName = "Please enter your first name.";
   }
 
-  if (!values.lastname) {
+  if (!values.lastName) {
     errors.lastName = "Please enter your last name.";
   }
 
@@ -15,7 +15,7 @@ export default function validateForm(values) {
     errors.email = "Please enter a valid email address.";
   }
 
-  if (values.displayName && values.displayname.length < 5) {
+  if (values.displayName && values.displayName.length < 5) {
     errors.displayName = "Use at least 5 characters.";
   }
 

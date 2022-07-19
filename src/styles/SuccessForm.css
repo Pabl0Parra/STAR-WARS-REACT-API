@@ -1,0 +1,14 @@
+.success_container {
+  height: 550px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
+}
+
+.success_title {
+  color: var(--yellow-popup);
+  text-align: center;
+}

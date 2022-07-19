@@ -1,4 +1,4 @@
-.popup_input {
+.input {
   height: 40px;
   padding: 0 15px;
   line-height: 40px;
@@ -6,28 +6,28 @@
   outline: none;
   border: none;
 }
-.popup_input:focus {
+.input:focus {
   background-color: var(--grey-popup);
   color: var(--yellow-popup);
   border: 1px solid var(--yellow-popup);
   caret-color: var(--yellow-popup);
 }
-.popup_input:focus::placeholder {
+.input:focus::placeholder {
   color: var(--white);
 }
-.popup_input--expand {
+.input--expand {
   width: 100%;
 }
 
-.popup_input--error {
+.input--error {
   border: 1px solid var(--red-popup);
 }
 
-.popup_input--error::placeholder {
+.input--error::placeholder {
   color: var(--red-popup);
 }
 
-.popup_errors {
+.input_errors {
   margin-top: 0;
   margin-bottom: 0;
   padding: 0.6em 0;

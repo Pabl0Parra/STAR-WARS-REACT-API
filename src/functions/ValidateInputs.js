@@ -22,7 +22,7 @@ export default function validateInputs(name, value, errors) {
   }
 
   if (name === "displayName") {
-    if (value.length < 5) {
+    if (value & (value.length < 5)) {
       error = "Can't be less than 5 characters.";
     }
   }

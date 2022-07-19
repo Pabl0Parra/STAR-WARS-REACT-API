@@ -7,11 +7,11 @@ const Input = ({ type, id, text, validation, error }) => {
         id={id}
         aria-required="true"
         maxLength="60"
-        className={error ? "popup_input popup_input--error" : "popup_input"}
+        className={error ? "input input--error" : "input"}
         placeholder={text}
         onBlur={validation}
       />
-      <p className="popup_errors">{error}</p>
+      <p className="input_errors">{error}</p>
     </>
   );
 };

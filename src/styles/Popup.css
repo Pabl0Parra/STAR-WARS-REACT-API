@@ -39,91 +39,18 @@
   color: var(--grey-color);
 }
 
-.popup_list {
-  height: 0px;
-  text-align: left;
-  color: var(--yellow-popup);
-  list-style: initial;
-  padding-left: 1.2em;
-  font-size: 0.8rem;
-  opacity: 0;
-  transition: height 0.35s;
-}
-
-.popup_list--show {
-  height: 60px;
-  opacity: 1;
-}
-
-.popup_condition--error {
-  color: var(--red-popup);
-}
-
-.popup_show {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding-bottom: 1em;
-}
-
-.popup_checkbox {
-  margin: 0 0.5em 0 0;
-  position: relative;
-  width: 1.4rem;
-  height: 1.4rem;
-  background-color: var(--background-popup);
-}
-
-.popup_checkbox + label {
-  padding-top: 5px;
-}
-
-.popup_submit,
-.popup_account {
+.form_submit,
+.form_account {
   height: 40px;
   padding: 0 18px;
   border-radius: 3px;
   font-size: 1rem;
 }
 
-.popup_submit {
+.form_submit {
   background-color: var(--grey-popup);
   color: var(--white);
   transition: background-color 0.3s ease;
-}
-
-.popup_submit:hover {
-  background-color: var(--blue-popup);
-}
-
-.popup_help {
-  margin: 5px 0 30px;
-  text-align: right;
-}
-
-.popup_help a {
-  color: var(--yellow-popup);
-}
-
-.popup_help a:hover {
-  text-decoration: underline;
-}
-
-.popup_account {
-  background-color: transparent;
-  color: var(--yellow-popup);
-}
-
-.popup_account:hover {
-  border: 1px solid var(--yellow-popup);
-}
-
-.popup_footer a {
-  color: var(--yellow-popup);
-}
-
-.popup_footer a:hover {
-  text-decoration: underline;
 }
 
 .popup_close {
