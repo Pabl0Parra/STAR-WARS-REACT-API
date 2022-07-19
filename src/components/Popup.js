@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Button from "./Button";
 import Input from "./Input";
 import useValidation from "../hooks/useValidation";
-import ValidateInputs from "../functions/ValidateInputs";
+import validateInputs from "../functions/validateInputs";
 import useLocalStorage from "../hooks/useLocalStorage";
 import popup_logo from "../assets/popup_logo.png";
 import "../styles/Popup.css";
@@ -13,7 +13,7 @@ export default function Popup({ closePopup, openPopup, title }) {
   const [user, setUser] = useLocalStorage("user");
   const [isValid, setIsValid] = useState(false);
   const { handleBlur, errors, handleSubmit, values } = useValidation(
-    ValidateInputs,
+    validateInputs,
     setIsValid
   );
 
