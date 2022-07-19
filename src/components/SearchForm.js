@@ -24,7 +24,7 @@ export default function SearchForm({ openLoginPopup, openRegisterPopup }) {
           text={"LOG IN"}
           name={"login_button"}
         />
-        <span></span>
+        <span>{"/ /"}</span>
         <Button
           open={() => openRegisterPopup(true)}
           text={"SIGN UP"}
