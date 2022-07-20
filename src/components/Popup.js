@@ -33,7 +33,7 @@ export default function Popup({ closePopup, openPopup, title }) {
         ) : title === "sign in" ? (
           <SuccessForm text={"Welcome!"} />
         ) : (
-          <SuccessForm text={"You are now part of the Star Wars crew"} />
+          <SuccessForm text={"You are now a young jedi"} />
         )}
         <Button
           name={"popup_close"}
