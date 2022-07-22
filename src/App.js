@@ -17,6 +17,10 @@ const App = () => {
   const [idShip, setIdShip] = useSessionStorage("id");
   const [loginPopup, setLoginPopup] = useState(false);
   const [registerPopup, setRegisterPopup] = useState(false);
+  const [loggedIn, setLoggedIn] = useState({
+    display: "",
+    login: false,
+  });
 
   return (
     <div className="App">
@@ -26,6 +30,8 @@ const App = () => {
             closePopup={setLoginPopup}
             openPopup={setRegisterPopup}
             title={"sign in"}
+            setLoggedIn={setLoggedIn}
+            loggedIn={loggedIn}
           />
         )}
         {registerPopup && (
@@ -39,6 +45,8 @@ const App = () => {
         <Header
           openLoginPopup={setLoginPopup}
           openRegisterPopup={setRegisterPopup}
+          loggedIn={loggedIn}
+          setLogged={setLoggedIn}
         />
         <NavBar />
         <main>

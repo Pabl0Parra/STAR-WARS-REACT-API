@@ -3,7 +3,12 @@ import SocialNetworks from "../components/SocialNetworks";
 import SearchForm from "../components/SearchForm";
 import "../styles/Header.css";
 
-const Header = ({ openLoginPopup, openRegisterPopup }) => {
+const Header = ({
+  openLoginPopup,
+  openRegisterPopup,
+  loggedIn,
+  setLoggedIn,
+}) => {
   return (
     <div className="container">
       <header className="header">
@@ -14,6 +19,8 @@ const Header = ({ openLoginPopup, openRegisterPopup }) => {
         <SearchForm
           openLoginPopup={openLoginPopup}
           openRegisterPopup={openRegisterPopup}
+          loggedIn={loggedIn}
+          setLogged={setLoggedIn}
         />
       </header>
     </div>

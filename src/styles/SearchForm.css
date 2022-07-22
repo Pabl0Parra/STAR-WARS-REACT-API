@@ -1,8 +1,9 @@
-.form {
+.search_form {
   display: flex;
+  justify-content: flex-end;
 }
 
-.form_input {
+.search_input {
   width: 200px;
   height: 40px;
   padding: 0 0 0 1em;
@@ -14,11 +15,11 @@
   color: var(--white);
 }
 
-.form_input:focus {
+.search_input:focus {
   filter: brightness(120%);
 }
 
-.form_button {
+.search_button {
   height: 40px;
   background-color: var(--grey-dark);
   border: none;
@@ -27,18 +28,18 @@
   cursor: pointer;
 }
 
-.form_button ion-icon {
+.search_button ion-icon {
   color: var(--grey-color);
   font-size: 26px;
 }
 
-.form_input:focus + .form_button {
+.search_input:focus + .search_button {
   filter: brightness(120%);
 }
 
 .button-group {
   width: fit-content;
-  margin-top: 0.8em;
+  margin-top: 2em;
   margin-left: auto;
   color: var(--grey-dark);
   font-size: 0.9rem;
@@ -46,17 +47,44 @@
 }
 
 .login_button,
-.signup_button {
+.signup_button,
+.logout_button {
   background-color: #000;
   color: var(--grey-color);
-  font-size: inherit;
-  font-weight: inherit;
+  font-size: 1rem;
+  font-weight: 800;
   border: none;
   cursor: pointer;
   transition: color 0.8s ease;
 }
 
 .login_button:hover,
-.signup_button:hover {
+.signup_button:hover,
+.logout_button:hover {
   color: var(--white);
+}
+
+.login_status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0.2em;
+}
+
+.login_user {
+  width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.login_user ion-icon {
+  padding-top: 5px;
+  font-size: 30px;
+}
+
+.login_user span:nth-child(2) {
+  padding-top: 2px;
+  padding-left: 5px;
+  overflow: hidden;
+  text-align: left;
 }

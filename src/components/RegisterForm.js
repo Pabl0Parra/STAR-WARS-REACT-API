@@ -8,7 +8,7 @@ import "../styles/RegisterForm.css";
 export default function RegisterForm({
   openPopup,
   closePopup,
-  setUser,
+  setUsers,
   setSuccess,
 }) {
   const [selectAria, setSelectAria] = useState(false);
@@ -22,17 +22,13 @@ export default function RegisterForm({
 
   useEffect(() => {
     if (isValid) {
-      setUser((user) => [...user, values]);
+      setUsers((users) => [...users, values]);
       setSuccess((success) => !success);
     }
-  }, [isValid, setUser, values, setSuccess]);
+  }, [isValid, setUsers, values, setSuccess]);
 
   return (
-    <form
-      className="popup_form"
-      onSubmit={handleSubmit}
-      onClick={(e) => e.target.id !== "password" && setSelectAria(false)}
-    >
+    <form className="popup_form" onSubmit={handleSubmit}>
       <Input
         type={"text"}
         id={"firstName"}
@@ -74,8 +70,11 @@ export default function RegisterForm({
               : "input input--expand input--error"
           }
           placeholder="Password"
-          onSelect={() => setSelectAria(true)}
-          onBlur={handleBlur}
+          onClick={() => setSelectAria(true)}
+          onBlur={(e) => {
+            handleBlur(e);
+            setSelectAria(false);
+          }}
           onKeyUp={handleBlur}
         />
         <p className="input_errors">{errors.password}</p>

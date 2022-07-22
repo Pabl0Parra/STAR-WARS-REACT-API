@@ -7,9 +7,10 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import popup_logo from "../assets/popup_logo.png";
 import "../styles/Popup.css";
 
-export default function Popup({ closePopup, openPopup, title }) {
-  const [user, setUser] = useLocalStorage("user");
+export default function Popup({ closePopup, openPopup, setLoggedIn, title }) {
+  const [users, setUsers] = useLocalStorage("user");
   const [success, setSuccess] = useState(false);
+  const [invalid, setInvalid] = useState(false);
 
   return (
     <div className="popup">
@@ -17,15 +18,27 @@ export default function Popup({ closePopup, openPopup, title }) {
         {!success ? (
           <>
             <img src={popup_logo} alt="" className="popup_logo" />
+            {invalid && (
+              <p className="popup_invalid">
+                The credentials you entered are incorrect. Reminder: passwords
+                are case sensitive.
+              </p>
+            )}
             <h2 className="popup_title">{title}</h2>
             {title === "sign in" && (
-              <LoginForm openPopup={openPopup} closePopup={closePopup} />
+              <LoginForm
+                openPopup={openPopup}
+                closePopup={closePopup}
+                users={users}
+                setLoggedIn={setLoggedIn}
+                setInvalid={setInvalid}
+              />
             )}
             {title === "create your account" && (
               <RegisterForm
                 openPopup={openPopup}
                 closePopup={closePopup}
-                setUser={setUser}
+                setUsers={setUsers}
                 setSuccess={setSuccess}
               />
             )}

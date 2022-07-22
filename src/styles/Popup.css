@@ -15,12 +15,25 @@
   position: relative;
   max-width: 540px;
   width: 100%;
-  padding-bottom: 40px;
+  transition: all 0.6s ease;
   background-color: var(--background-popup);
 }
 
 .popup_logo {
   margin: 30px 0 10px;
+}
+
+.popup_invalid,
+.popup_form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+
+.popup_invalid {
+  padding: 1em 3em;
+  color: var(--red-modal);
+  border: 1px solid var(--red-modal);
 }
 
 .popup_title {
@@ -34,8 +47,7 @@
 .popup_form {
   display: flex;
   flex-direction: column;
-  width: 85%;
-  margin: 0 auto;
+  padding-bottom: 40px;
   color: var(--grey-color);
 }
 
