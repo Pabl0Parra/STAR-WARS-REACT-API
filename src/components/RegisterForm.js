@@ -70,7 +70,7 @@ export default function RegisterForm({
               : "input input--expand input--error"
           }
           placeholder="Password"
-          onClick={() => setSelectAria(true)}
+          onFocus={() => setSelectAria(true)}
           onBlur={(e) => {
             handleBlur(e);
             setSelectAria(false);

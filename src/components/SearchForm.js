@@ -49,7 +49,7 @@ export default function SearchForm({
           <Button
             open={() => setLoggedIn({ display: "", login: false })}
             text={"LOG OUT"}
-            name={"logout_button"}
+            name={"login_button"}
           />
         </div>
       )}
