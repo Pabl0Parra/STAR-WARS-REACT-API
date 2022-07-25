@@ -46,7 +46,8 @@
   font-weight: bold;
 }
 
-.login_button {
+.login_button,
+.signup_button {
   background-color: #000;
   color: var(--grey-color);
   font-size: 1rem;
