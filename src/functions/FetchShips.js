@@ -1,5 +1,5 @@
-import GetShipData from "./getShipData";
+import GetShipData from "./GetShipData";
 
-const fetchShips = async (url) => await GetShipData(url);
+const FetchShips = async (url) => await GetShipData(url);
 
-export default fetchShips;
+export default FetchShips;

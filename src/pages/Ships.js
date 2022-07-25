@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { URL } from "../variables/URL";
 import axios from "axios";
 import ShipsList from "../components/ShipsList";
-import fetchShips from "../functions/fetchShips";
+import FetchShips from "../functions/FetchShips";
 import Button from "../components/Button";
 
 import "../styles/Ships.css";
@@ -13,12 +13,12 @@ const Ships = ({ changeShip, changeId }) => {
 
   useEffect(() => {
     const source = axios.CancelToken.source();
-    const getShipsData = async () => {
-      const res = await fetchShips(URL);
+    const GetShipsData = async () => {
+      const res = await FetchShips(URL);
       setShips(res.results);
       setPage(res.next);
     };
-    getShipsData();
+    GetShipsData();
 
     return () => {
       source.cancel();
@@ -27,7 +27,7 @@ const Ships = ({ changeShip, changeId }) => {
 
   const handleAddShips = async () => {
     if (page) {
-      const res = await fetchShips(page);
+      const res = await FetchShips(page);
       setShips([...ships, ...res.results]);
       setPage(res.next);
     }
