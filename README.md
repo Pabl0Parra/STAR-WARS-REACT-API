@@ -69,11 +69,11 @@ The negative part, as you may have noticed, is that we have limited the website 
 
 You must implement a button at the end of the list of ships , with the text "view more", which allows more ships to be obtained from the server and added to the list of ships shown to the user.
 
-You will need to make use of pagination, please refer to the project description if in doubt as there is a short description of pagination and the URL to be implemented.
 ---
 ### ***Exercise 4***
 
 Change the styles as you see fit. The only criteria is that it looks as close as possible to the official Star Wars website.
+
 ---
 ### ***Exercise 5***
 
