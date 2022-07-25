@@ -1,13 +1,48 @@
+:root {
+  --black: #000;
+  --blue-color: #1277fb;
+  --border-color: #333;
+  --gold-color: #d7a746;
+  --grey-color: #7a7a7a;
+  --grey-dark: #242424;
+  --brown-color: #403321;
+  --orange-color: #d57026;
+  --white: #fff;
+  --background-popup: #181818;
+  --yellow-popup: #edd700;
+  --grey-popup: #484848;
+  --blue-popup: #3f6dac;
+  --red-popup: #ff0000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "StarWars";
+  src: url("./font_family/font3.woff") format("woff");
+}
+
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: StarWars, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+a {
+  color: var(--grey-color);
+  text-decoration: none;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

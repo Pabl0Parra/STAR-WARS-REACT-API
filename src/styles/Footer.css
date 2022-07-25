@@ -1,0 +1,45 @@
+.footer {
+  position: relative;
+  height: 272px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1em 0;
+  color: var(--grey-color);
+  background-color: var(--black);
+  overflow: hidden;
+  background-image: url(../assets/vader_2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.social-section {
+  margin-bottom: 2em;
+}
+
+.legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-section,
+.legal {
+  position: relative;
+  z-index: 1;
+}
+
+.legal_link {
+  display: inline-block;
+  margin: 6px 0 0;
+  padding: 0 11px 0 12px;
+  border-right: 1px solid var(--grey-color);
+}
+
+.legal_link a {
+  transition: color 0.8s ease;
+}
+
+.legal_link:hover a {
+  color: var(--white);
+}

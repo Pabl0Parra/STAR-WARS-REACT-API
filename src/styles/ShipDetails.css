@@ -1,0 +1,44 @@
+.ship_details {
+  width: 60%;
+  margin: 0 auto 3em;
+  text-align: left;
+  color: var(--grey-color);
+}
+
+.ship_details img {
+  width: 100%;
+}
+
+.ship_details_bar,
+.ship_details_info {
+  position: relative;
+}
+
+.ship_details_bar {
+  background-color: #f05f33;
+  height: 2px;
+}
+
+.ship_info {
+  padding: 0 1em 1em;
+  background-color: var(--black);
+}
+
+.ship_info h3 {
+  margin-top: 0;
+  padding-top: 1em;
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.info_box {
+  display: flex;
+}
+
+.info_box div {
+  flex: 1;
+}
+
+.info_box p {
+  margin: 1.5em 0;
+}

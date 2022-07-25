@@ -1,0 +1,31 @@
+.list_item {
+  background-color: #151515;
+  color: #727272;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 70%;
+  margin: 0 auto 1em;
+  padding: 1em;
+  text-align: left;
+}
+
+.list_item a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.list_item * {
+  margin: 0;
+}
+
+.list_item:hover {
+  filter: brightness(150%);
+}
+
+.list_item h3 {
+  margin-bottom: 0.5em;
+}
+
+.list_item:hover h3 {
+  color: var(--gold-color);
+}
