@@ -40,7 +40,6 @@ export default function SearchForm({
       ) : (
         <div className="login_status">
           <div className="login_user">
-            <ion-icon name="person-circle-outline"></ion-icon>
             <span>
               <ion-icon name="person-circle-outline"></ion-icon>
             </span>

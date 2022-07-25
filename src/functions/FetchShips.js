@@ -1,4 +1,4 @@
-import GetShipData from "./GetShipData";
+import GetShipData from "./getShipData";
 
 const FetchShips = async (url) => await GetShipData(url);
 
