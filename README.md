@@ -69,9 +69,7 @@ The negative part, as you may have noticed, is that we have limited the website 
 
 You must implement a button at the end of the list of ships , with the text "view more", which allows more ships to be obtained from the server and added to the list of ships shown to the user.
 
-Bonus : it is preferable to implement an infinite scroll , which loads more ships as the user scrolls the web.
-
-Help : You will need to make use of pagination, please refer to the project description if in doubt as there is a short description of pagination and the URL to be implemented.
+You will need to make use of pagination, please refer to the project description if in doubt as there is a short description of pagination and the URL to be implemented.
 ---
 ### ***Exercise 4***
 
