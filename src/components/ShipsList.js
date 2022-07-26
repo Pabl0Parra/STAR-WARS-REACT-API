@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import filteredShips from "./FilteredShips";
+import filteredShips from "./filteredShips";
 import "../styles/ShipsList.css";
 
 const ShipsList = ({ ships, changeShip, changeId }) => {
