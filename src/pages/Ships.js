@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { URL } from "../constants/URL";
 import axios from "axios";
 import ShipsList from "../components/ShipsList";
-import fetchShips from "../functions/fetchShips";
+import fetchShips from "../functions/FetchShips";
 import Button from "../components/Button";
 
 import "../styles/Ships.css";

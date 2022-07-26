@@ -1,4 +1,4 @@
-export default function validateInputs(name, value, errors) {
+export default function ValidateInputs(name, value, errors) {
   let error = "";
 
   if (name === "firstName" || name === "lastName") {

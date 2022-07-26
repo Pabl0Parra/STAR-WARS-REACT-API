@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Input from "./Input";
 import useValidation from "../hooks/useValidation";
-import validateInputs from "../functions/validateInputs";
+import ValidateInputs from "../functions/ValidateInputs";
 import validateForm from "../functions/validateForm";
 import "../styles/RegisterForm.css";
 
@@ -15,7 +15,7 @@ export default function RegisterForm({
   const [displayPassword, setDisplayPassword] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const { handleBlur, errors, handleSubmit, values } = useValidation(
-    validateInputs,
+    ValidateInputs,
     validateForm,
     setIsValid
   );
