@@ -1,10 +1,8 @@
 import axios from "axios";
 
-const getShipData = async (URL, set) => {
+const getShipData = async (URL, _set) => {
   const res = await axios.get(URL);
-  const result = await res.data;
-
-  return result;
+  return await res.data;
 };
 
 export default getShipData;
