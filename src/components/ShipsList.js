@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import filteredShips from "./filteredShips";
+import FilteredShips from "./FilteredShips";
 import "../styles/ShipsList.css";
 
 const ShipsList = ({ ships, changeShip, changeId }) => {
   const handleSelectShip = (name) => {
-    const filteredItem = filteredShips(name, ships);
+    const filteredItem = FilteredShips(name, ships);
     changeShip(filteredItem[0]);
-    changeId(filteredItem[0].url.match(/[0-9]+/));
+    changeId(filteredItem[0].url.match(/\d+/));
   };
 
   return (

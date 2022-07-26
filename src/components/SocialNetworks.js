@@ -1,6 +1,6 @@
 import "../styles/SocialNetworks.css";
 
-export default function Social() {
+export default function SocialNetworks() {
   return (
     <div className="social">
       <ul className="social_links">
