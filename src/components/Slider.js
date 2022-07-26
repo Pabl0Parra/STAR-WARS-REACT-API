@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { SliderData } from "../variables/SliderData";
+import { SliderData } from "../constants/SliderData";
 import { Link } from "react-router-dom";
 import CardSummary from "./CardSummary";
 import Button from "./Button";
@@ -16,16 +16,16 @@ export default function Slider() {
   };
 
   const prevSlide = () => {
-    setCurrent((current) =>
-      current === 0 ? SliderData.length - 1 : current - 1
+    setCurrent((currents) =>
+      currents === 0 ? SliderData.length - 1 : currents - 1
     );
     clearInterval(transitionSlide.current);
     transitionSlide.current = null;
   };
 
   const nextSlide = () => {
-    setCurrent((current) =>
-      current === SliderData.length - 1 ? 0 : current + 1
+    setCurrent((currents) =>
+      currents === SliderData.length - 1 ? 0 : currents + 1
     );
     clearInterval(transitionSlide.current);
     transitionSlide.current = null;
@@ -33,8 +33,8 @@ export default function Slider() {
 
   useEffect(() => {
     transitionSlide.current = setInterval(() => {
-      setCurrent((current) =>
-        current === SliderData.length - 1 ? 0 : current + 1
+      setCurrent((currents) =>
+        currents === SliderData.length - 1 ? 0 : currents + 1
       );
     }, 6000);
     return () => clearInterval(transitionSlide.current);

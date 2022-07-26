@@ -1,15 +1,9 @@
 export default function validateInputs(name, value, errors) {
   let error = "";
 
-  if (name === "firstName") {
+  if (name === "firstName" || name === "lastName") {
     if (!value.trim()) {
-      error = "Please enter your name.";
-    }
-  }
-
-  if (name === "lastName") {
-    if (!value.trim()) {
-      error = "Please enter your last name.";
+      error = "Please enter your name without spaces.";
     }
   }
 
