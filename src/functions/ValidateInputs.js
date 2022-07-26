@@ -26,7 +26,7 @@ export default function validateInputs(name, value, errors) {
       error = "Please enter a password.";
     } else if (value.length < 6) {
       error = "Can't be less than 6 characters.";
-    } else if (!/^(?:[\d]+[a-z]|[a-z]+[\d])[a-z0-9]*$/i.test(value)) {
+    } else if (!/^(?:\d+[a-z]|[a-z]+\d)[a-z0-9]*$/i.test(value)) {
       error = "The password is too weak.";
     }
   }

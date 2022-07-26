@@ -23,7 +23,7 @@ export default function validateForm(values) {
     errors.password = "Please enter a password.";
   } else if (values.password.length < 6) {
     errors.password = "The password is too short.";
-  } else if (!/^(?:[\d]+[a-z]|[a-z]+[\d])[a-z0-9]*$/i.test(values.password)) {
+  } else if (!/^(?:\d+[a-z]|[a-z]+\d)[a-z0-9]*$/i.test(values.password)) {
     errors.password = "The password is too weak.";
   }
 
