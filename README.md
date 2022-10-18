@@ -14,7 +14,7 @@ Please, visit the following link for instructions on how to start it: [create-re
 
 # **Description**
 
-This delivery is based on a technical test of a large company in the e-commerce sector, which is looking for front end developers in Barcelona. This project is a technical test: consuming API data, displaying it in a list, and implementing the detail of each item in the list.
+This delivery is based on a technical test of a large company in the e-commerce sector, which is looking for front end developers in Barcelona. This project is a technical test: consuming API data, displaying it in a list, and implementing the detail of each item in the list..
 
 The website you have to develop is an information website about Star Wars ships! The list of ships with the detailed information of each one of them will have to be shown.
 
@@ -32,7 +32,7 @@ The website you have to develop is an information website about Star Wars ships!
 
 ## **_Level 1_** :star:
 
-### ***Exercise 1***
+### **_Exercise 1_**
 
 To get started, the first thing you have to implement is the main screen in which the list of ships is displayed.
 
@@ -45,8 +45,10 @@ Data to display for each ship in the list:
 - Model
 
 ![alt text](-------)
---- 
-### ***Exercise 2***
+
+---
+
+### **_Exercise 2_**
 
 In this exercise you have to create the sheet for each ship, showing all its details.
 
@@ -58,10 +60,9 @@ The user will be able to access the details of each ship by clicking on each of 
 
 ![alt text](-------)
 
-
 ---
 
-### ***Exercise 3***
+### **_Exercise 3_**
 
 GREAT!, you already have a basic version of the website created, in which the user can view the list of ships and see the file for each one by clicking on it.
 
@@ -70,23 +71,23 @@ The negative part, as you may have noticed, is that we have limited the website 
 You must implement a button at the end of the list of ships , with the text "view more", which allows more ships to be obtained from the server and added to the list of ships shown to the user.
 
 ---
-### ***Exercise 4***
+
+### **_Exercise 4_**
 
 Change the styles as you see fit. The only criteria is that it looks as close as possible to the official Star Wars website.
 
 ---
-### ***Exercise 5***
+
+### **_Exercise 5_**
 
 As we have done in the previous installments, we will implement a welcome home page , and through a button, it will be possible to access the main page of ships. For this, you must use React 's routing .
 
 In addition to the access button on the main page, the user will have access to the main page via the upper navigation bar.
 
-To this end, if you have not yet implemented the component, you will need to create the top navigation bar.
----
+## To this end, if you have not yet implemented the component, you will need to create the top navigation bar.
 
-### ***Exercise 6***
+### **_Exercise 6_**
 
 You must implement a login and registration screen , where through local storage , since we do not have a user authentication server, they can register and log in later if they exist.
 
 In this exercise showing the result of the console login/registration is sufficient.
-
